@@ -41,6 +41,9 @@ tsx apps/cli/src/index.ts --mocks mocks/all.mock.ts --port 4321
 - `--port <number>`: Porta do servidor (padrão: 4321).
 - `--resilient`: Ativa o modo resiliente para armazenar respostas.
 
+### Crie a pasta mocks na raiz do projeto.
+> Dentro crie um arquivo mocks/nome_arquivo.mock.ts
+
 ### Exemplos de Execução
 
 **Apenas com Mocks:**
