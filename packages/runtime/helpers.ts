@@ -13,7 +13,7 @@ export const templateHelpers = {
     const totalChance = options.reduce((sum, opt) => sum + opt.chance, 0);
 
     if (Math.abs(totalChance - 100) > 0.01) {
-      console.warn('Soma das chances não é 100:', totalChance);
+      console.warn("Soma das chances não é 100:", totalChance);
     }
 
     const random = Math.random() * 100;
@@ -37,12 +37,14 @@ export const templateHelpers = {
     Array.from({ length }, (_, i) => fn(i)),
   choice: <T>(arr: T[]) => arr[Math.floor(Math.random() * arr.length)],
 
-  setState: (key: string, value: any) => {
-    state[key] = value;
-    return value;
+  state: {
+    setState: (key: string, value: any) => {
+      state[key] = value;
+      return value;
+    },
+    getState: (key: string, defaultValue?: any) =>
+      key in state ? state[key] : defaultValue,
   },
-  getState: (key: string, defaultValue?: any) =>
-    key in state ? state[key] : defaultValue,
 
   faker,
 };
